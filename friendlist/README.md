@@ -1,0 +1,2 @@
+# friendlist
+### a Sails application
