@@ -1,19 +1,19 @@
-Istim-Friends
-Build Status
+<h1> Istim-Friends </h1>
+
 
 Friends list API for the Stim Game plataform.
 
-Server URL
+<h1> Server URL </h1>
 
-http://istim-friends.nodejitsu.com
+<a href = "http://istim-friends.nodejitsu.com"> http://istim-friends.nodejitsu.com </a>
 
-Services
+<h2> Services </h2>
 
-Games
+Add friend
 
 
-Dependencies
+<h1> Dependencies </h1>
 
-User API
+<h2> User API </h2>
 
 Authentication
