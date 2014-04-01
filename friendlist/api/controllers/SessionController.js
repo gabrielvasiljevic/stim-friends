@@ -7,12 +7,28 @@
 
 var bcrypt = require('bcrypt');
 
+
+var request = require('request');
+
+
 module.exports = {
 
 	'new': function(req, res){
 		res.view('session/new');		
 	},
-
+	
+    getUserList: function(req, res){
+	    request('http://istim-user.nodejitsu.com/user', function(error, response, body){
+	        if(!error && response.statusCode == 200){
+	            console.log(JSON.parse(body));
+	            return res.send(200, JSON.parse(body));
+	        }
+	        else{
+	            return res.send(404, 'Page not found!');
+	        }
+        });
+	},
+	
 	create: function(req, res, next){
 		if(!req.param('email') || !req.param('password')){
 			var userORpasswordRequired = [{name: 'userORpasswordRequired', message: 'Enter e-mail and password!'}]
@@ -24,7 +40,7 @@ module.exports = {
 			res.redirect('/session/new');
 			return;
 		}
-		
+        
 		User.findOneByEmail(req.param('email')).done(function(err, user){
 			if(err) return next(err);
 			

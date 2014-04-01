@@ -1,0 +1,63 @@
+{
+  "data": {
+    "user": [
+      {
+        "name": "victor",
+        "email": "victor@vic.com",
+        "online": true,
+        "admin": false,
+        "friends": "",
+        "encryptedPassword": "$2a$10$nVkDRnVzVGZA27lbF5KFJebDvDMUADhSYJ0Kb9WgvhA2kcIaXJtx2",
+        "createdAt": "2014-04-01T16:08:11.454Z",
+        "updatedAt": "2014-04-01T16:08:11.462Z",
+        "id": 1
+      }
+    ]
+  },
+  "schema": {
+    "user": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "online": {
+        "type": "boolean",
+        "defaultsTo": false
+      },
+      "admin": {
+        "type": "boolean",
+        "defaultsTo": false
+      },
+      "encryptedPassword": {
+        "type": "string"
+      },
+      "friends": {
+        "type": "string",
+        "defaultsTo": "<br/>"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "defaultsTo": "AUTO_INCREMENT",
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime",
+        "default": "NOW"
+      },
+      "updatedAt": {
+        "type": "datetime",
+        "default": "NOW"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 1
+    }
+  }
+}
